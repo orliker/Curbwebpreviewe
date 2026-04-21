@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Shrikhand&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Archivo Black", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-bubble: "Shrikhand", cursive;
+
+  --color-brand-black: #0D0D0D;
+  --color-brand-red: #FF0000;
+  --color-brand-white: #FFFFFF;
+  --color-vibrant-red: #ED1C24;
+
+  --animation-grain: grain 8s steps(10) infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-black);
+    color: var(--color-brand-white);
+    @apply antialiased selection:bg-brand-red selection:text-white;
+  }
+}
+
+@layer utilities {
+  .text-shadow-red {
+    text-shadow: 2px 2px 0px var(--color-brand-red);
+  }
+
+  .brutalist-border {
+    border: 4px solid var(--color-brand-white);
+  }
+
+  .brutal-shadow {
+    box-shadow: 6px 6px 0px var(--color-brand-red);
+  }
+
+  .tape {
+    background: var(--color-brand-red);
+    color: var(--color-brand-white);
+    padding: 4px 12px;
+    transform: rotate(-2deg);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    @apply uppercase;
+  }
+
+  .receipt {
+    font-family: 'Courier New', Courier, monospace;
+    background: #FFF;
+    color: #000;
+    padding: 15px;
+    transform: rotate(1deg);
+    box-shadow: 6px 6px 0px var(--color-brand-red);
+  }
+
+  .burger-hero {
+    background: radial-gradient(circle at center, var(--color-brand-red) 0%, transparent 70%);
+  }
+
+  .sticker-shadow {
+    box-shadow: 8px 8px 0px var(--color-brand-black);
+  }
+
+  .sticker-shadow-red {
+    box-shadow: 6px 6px 0px var(--color-brand-red);
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .hover-pulse:hover {
+    animation: pulse 1s infinite;
+  }
+}
+
+@layer utilities {
+  .grain-overlay {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: grain 8s steps(10) infinite;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 50;
+  }
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0) }
+  70% { transform:translate(0, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+}
+
+/* Custom scrollbar for that industrial feel */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-red);
+  border: 3px solid var(--color-brand-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-white);
+}
