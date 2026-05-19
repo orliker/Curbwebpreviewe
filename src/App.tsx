@@ -52,7 +52,7 @@ export default function App() {
           <div className="flex flex-col items-end gap-3 pointer-events-auto">
             <div className="tape text-xs">Aberto até às 03:00</div>
             <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-60 text-right">
-              Rua de Cedofeita 452<br />Porto, Portugal
+              Rua da Torrinha 111<br />Porto, Portugal
             </div>
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -253,7 +253,7 @@ export default function App() {
                 <span className="text-3xl font-black uppercase">O BERÇO</span>
                 <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
-              <p className="font-mono text-sm mt-4">RUA DE CEDOFEITA, 452, PORTO</p>
+              <p className="font-mono text-sm mt-4">RUA DA TORRINHA 111, PORTO</p>
             </div>
           </div>
         </div>
